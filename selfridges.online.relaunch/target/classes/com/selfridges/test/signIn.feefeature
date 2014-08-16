@@ -1,0 +1,8 @@
+Feature: Login and registration tests
+
+Scenario: Check the user login
+Given Im not logged in
+And I go to login page
+When I login with username and password
+Then I should be able login and see "My details" header
+And I should see "My details", "Orders & Returns", "Address book" and "Payment cards" on left nav bar

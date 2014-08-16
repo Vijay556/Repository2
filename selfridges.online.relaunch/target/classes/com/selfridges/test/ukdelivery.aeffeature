@@ -1,0 +1,42 @@
+Feature: Delivery options test
+
+@delivery @clearBasket
+Scenario Outline: Check the click and collect delivery as a guest
+Given Im not logged in
+Given Im not loggd in
+And I add a "mug" to the basket
+When I do guest check out
+Then I should be able to do click and collect as guest by entering <title>, <first name>, <last name>, <email>, <phone>, <store name>
+And Change the store to "Manchester Trafford"
+
+Examples:
+|  title | first name |last name |email 	  |phone	  |store name |
+|  Mr	 | Chiran 	  | Reddy	 |aaa@bbb.com |0123456789 |Birmingham  |
+|  Mrs	 | Jani 	  | Mc		 |ccc@ddd.com |1234567890 |London	   |
+@delivery @clearBasket
+Scenario Outline: Check the UK delivery as a guest
+Given Im not logged in
+And I add a "socks" to the basket
+When I do guest check out
+Then I should be able to do UK delivery as guest by entering <title>, <first name>, <last name>, <email>, <phone>, <postcode>, <adr1>, <adr2>, <town>
+
+Examples:
+|  title | first name |last name |email 	  |phone	  | postcode | adr1 | adr2  		|town 			|
+|  Mr	 | Chiran 	  | Reddy	 |aaa@bbb.com |0123456789 | E126NU	 | 	232	| Browning Road | London  		|
+
+@delivery @clearBasket
+Scenario Outline: Check the International delivery as a guest
+Given Im not logged in
+And I add a "socks" to the basket
+When I do guest check out
+Then I should be able to do International delivery as guest by entering <title>, <first name>, <last name>, <email>, <phone>, <postcode>, <adr1>, <adr2>, <town>, <country>  
+
+Examples:
+|  title | first name |last name |email 	  |phone	  | postcode | adr1 | adr2  		|town 			| country   |
+|  Mr	 | Chiran 	  | Reddy	 |aaa@bbb.com |0123456789 | E126NU	 | 	230	| Browning Road | Chennai  		|India 		|
+
+@delivery @clearBasket
+Scenario: Check the UK delivery as a registered user
+Given I add a "socks" to the basket
+When I do check out as a user with email "creddy2014@gmail.com" and password "Password1"
+Then I should be able to do UK delivery as a user
