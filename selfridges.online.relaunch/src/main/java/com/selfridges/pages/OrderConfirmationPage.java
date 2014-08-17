@@ -26,6 +26,7 @@ public class OrderConfirmationPage {
 	
 	public String getOrderConfirmationNumer(){
 		
+		
 		return orderConfirmationNumber.getText();
 		
 	}

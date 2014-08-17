@@ -1,19 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite failures="1" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="62.669847">
-<testcase classname="Buying one product" name="Buy a product as a guest" time="62.669847">
-<failure message="java.lang.NullPointerException&#13;&#10;&#9;at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:59)&#13;&#10;&#9;at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:34)&#13;&#10;&#9;at com.sun.proxy.$Proxy43.getText(Unknown Source)&#13;&#10;&#9;at com.selfridges.pages.OrderConfirmationPage.getOrderConfirmationNumer(OrderConfirmationPage.java:29)&#13;&#10;&#9;at com.selfridges.test.vijay1.I_should_get_an_order_confirmation(vijay1.java:77)&#13;&#10;&#9;at ✽.Then I should get an order confirmation(main/resources/com/selfridges/test/vijay1.feature:10)&#13;&#10;"><![CDATA[Given Im on Selfridges website..............................................passed
-When I add "mug" to the basket..............................................passed
-And I choose collection point as "London" with deliver to "Mr", "vijay","kayyam","vijay.20886@gmail.com","07769359185".passed
-And I paid towards my product with "4111111111111111","Fname Lname","March","2015","001","AL10 0UG","Line1","Line2","Line3","Line4".passed
-Then I should get an order confirmation.....................................failed
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="1" name="cucumber.runtime.formatter.JUnitFormatter" skipped="1" tests="2" time="11.372601">
+<testcase classname="Buying one product" name="Buy a product as a guest" time="9.853893">
+<failure message="java.lang.NullPointerException&#10;&#9;at com.selfridges.test.vijay1.I_choose_collection_point_as_with_deliver_to_(vijay1.java:64)&#10;&#9;at ✽.And I choose collection point as &quot;London&quot; with deliver to &quot;Mr&quot;, &quot;vijay&quot;,&quot;kayyam&quot;,&quot;vijay.20886@gmail.com&quot;,&quot;07769359185&quot;(main/resources/com/selfridges/test/vijay1.feature:18)&#10;"><![CDATA[Given Im on Selfridges website..............................................passed
+When I hover over "L1_category_name" and I selected "L2_category" and added a first item in the basket.passed
+And I choose collection point as "London" with deliver to "Mr", "vijay","kayyam","vijay.20886@gmail.com","07769359185".failed
+And I paid towards my product with "4111111111111111","Fname Lname","March","2015","001","AL10 0UG","Line1","Line2","Line3","Line4".skipped
+Then I should get an order confirmation.....................................skipped
 
 StackTrace:
-java.lang.NullPointerException
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:59)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:34)
-	at com.sun.proxy.$Proxy43.getText(Unknown Source)
-	at com.selfridges.pages.OrderConfirmationPage.getOrderConfirmationNumer(OrderConfirmationPage.java:29)
-	at com.selfridges.test.vijay1.I_should_get_an_order_confirmation(vijay1.java:77)
-	at ✽.Then I should get an order confirmation(main/resources/com/selfridges/test/vijay1.feature:10)
+java.lang.NullPointerException
+	at com.selfridges.test.vijay1.I_choose_collection_point_as_with_deliver_to_(vijay1.java:64)
+	at ✽.And I choose collection point as "London" with deliver to "Mr", "vijay","kayyam","vijay.20886@gmail.com","07769359185"(main/resources/com/selfridges/test/vijay1.feature:18)
 ]]></failure>
+</testcase>
+<testcase classname="Buying one product" name="Buy a product as a guest_1" time="1.518708">
+<skipped><![CDATA[Given Im on Selfridges website..............................................passed
+When I hover over Mens and I selected All categories and added a first item in the basket.undefined
+And I choose collection point as "London" with deliver to "Mr", "vijay","kayyam","vijay.20886@gmail.com","07769359185".skipped
+And I paid towards my product with "4111111111111111","Fname Lname","March","2015","001","AL10 0UG","Line1","Line2","Line3","Line4".skipped
+Then I should get an order confirmation.....................................skipped
+]]></skipped>
 </testcase>
 </testsuite>

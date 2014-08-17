@@ -62,22 +62,26 @@ public class vijay1 {
 	@When("^I choose collection point as \"([^\"]*)\" with deliver to \"([^\"]*)\", \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\"$")
 	public PaymentPage I_choose_collection_point_as_with_deliver_to_(String storename, String title, String fname, String lname, String email, String phonenum) throws Throwable {
 		pp = gm.clickBasketIcon().continueToCheckOut().guestCheckOut().clickAndCollectAsGuest(title,fname,lname,email,phonenum,storename).
-				   clickOnOrderSummaryButtonOnRight().selectFirstAvailableCollectionDate().clickOnPayNowButton1();
-				return pp;
+		clickOnOrderSummaryButtonOnRight().selectFirstAvailableCollectionDate().clickOnPayNowButton1();
+		return pp;
 	}
-
+ 
 	@When("^I paid towards my product with \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\"$")
 	public void I_paid_towards_my_product_with_(String cardNumber, String nameOnCard, String expMonth, String expYear, String cvv, String postcode, String line1, String line2, String line3, String line4) throws Throwable {
-		
 		pp.payWithNewCard(cardNumber,nameOnCard,expMonth,expYear,cvv,postcode,line1,line2,line3,line4);
 	}	
 	    
 	@Then("^I should get an order confirmation$")
 	public void I_should_get_an_order_confirmation() throws Throwable {
 		System.out.println(ocp.getOrderConfirmationNumer());
-		Assert.assertTrue("Order not placed succssfully", ocp.isConfirmationNumerGenerated());
+		Assert.assertTrue("Order not placed successfully", ocp.isConfirmationNumerGenerated());
 		Assert.assertTrue("ThankYou Message not displayed", ocp.isThankYouMessageTextDispalyed());
 		Assert.assertTrue("Email sent confirmation information not displayed", ocp.isEmailConfirmationTextDispalyed());
 		
+	}
+	
+	@When("^I hover over \"([^\"]*)\" and I selected \"([^\"]*)\" and added a first item in the basket$")
+	public void I_hover_over_Mens_and_I_selected_All_categories_and_added_a_first_item_in_the_basket(String arg1, String arg2) throws Throwable {
+	   
 	}
 }
