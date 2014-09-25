@@ -60,7 +60,7 @@ public class PaymentPage {
 		
 	}
 	
-	public OrderConfirmationPage payWithNewCard(String cardNum, String name, String expMonth, String expYear, String cvv, String postcode, String line1, String line2, String line3, String line4){
+	public void payWithNewCard(String cardNum, String name, String expMonth, String expYear, String cvv, String postcode, String line1, String line2, String line3, String line4){
 		cardNumber.clear();
 		cardNumber.sendKeys(cardNum);
 		nameOnCard.clear();
@@ -82,7 +82,7 @@ public class PaymentPage {
 		billingAddressline4.clear();
 		billingAddressline4.sendKeys(line4);
 		placeorderButton.click();
-		return PageFactory.initElements(driver, OrderConfirmationPage.class);
+		//return PageFactory.initElements(driver, OrderConfirmationPage.class);
 	}
 	
 	public void paywithPaypal(){
