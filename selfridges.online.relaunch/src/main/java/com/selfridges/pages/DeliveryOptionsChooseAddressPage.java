@@ -27,9 +27,6 @@ public class DeliveryOptionsChooseAddressPage {
 	String actualSummaryHeader=null;
 	
 	
-	
-	
-	
 	@FindBy(xpath=Constants.ukDeliveryRadio)
 	WebElement ukDeliveryOption;
 	@FindBy(xpath=Constants.title)
@@ -150,14 +147,19 @@ public class DeliveryOptionsChooseAddressPage {
 	
 	//Select the click and collect option as Guest user and enter the values
 
-	public DeliveryOptionsChooseAddressPage clickAndCollectAsGuest(String ttl, String fName, String lName, String email, String phone, String storeName ) throws InterruptedException{
+	public DeliveryOptionsChooseAddressPage chooseClickAndCollect(){
+		clickAndCollectRadio.click();
+		return this;
+	}
+	
+	public DeliveryOptionsChooseAddressPage clickAndCollectAsGuest(String ttl, String fName, String lName, String email, String phone) throws InterruptedException{
 		
 		Thread.sleep(1000);
 		//actualSummaryHeader=driver.findElement(By.xpath("//*[@id='orderSummaryPanel']/div/h2")).getText();
 		//System.out.println(actualSummaryHeader);
 		//Assert.assertEquals("Order summary header is not right", expectedOSHeader, actualSummaryHeader);
 				
-		clickAndCollectRadio.click();
+		
 		Select select=new Select(title_cc);
 		select.selectByVisibleText(ttl);
 		Thread.sleep(1000);
@@ -169,7 +171,10 @@ public class DeliveryOptionsChooseAddressPage {
 		guestEmail_cc.sendKeys(email);
 		telephone_cc.clear();
 		telephone_cc.sendKeys(phone);
+		return this;
+	}
 	
+	public DeliveryOptionsChooseAddressPage chooseStore(String storeName){ 
 		if(storeName.equalsIgnoreCase("London"))
 			londonStore_cc.click();
 		else if(storeName.equalsIgnoreCase("Birmingham"))
@@ -184,8 +189,7 @@ public class DeliveryOptionsChooseAddressPage {
 		
 	}
 	
-	public DeliveryOptionsChooseAddressPage clickAndCollectAsUser(String storeName ){
-		
+	public DeliveryOptionsChooseAddressPage clickAndCollectAsUser(String storeName ){		
 			
 		if(storeName.equalsIgnoreCase("London"))
 			londonStore_cc.click();
