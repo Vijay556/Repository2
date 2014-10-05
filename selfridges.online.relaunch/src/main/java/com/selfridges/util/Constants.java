@@ -154,5 +154,7 @@ public class Constants {
 	public static final String printreceiptButton="//a[@class='printReceipt btnR btnR3']";
 	public static final String continueShoppingButton="//a[@class='btnR']";
 	public static final String thankYouForYourOrderText="//h2";
+	public static final String billingCountryName = "//select[@id='country']";
+	public static final String cardType = "//select[@id='checkoutCardType']";
 		
 }
