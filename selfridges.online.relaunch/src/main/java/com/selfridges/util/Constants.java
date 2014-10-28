@@ -139,10 +139,11 @@ public class Constants {
 	public static final String issueYear="//*[@id='validyyear']";
 	public static final String issueNumber="//input[@id='issue']";
 	public static final String cvvNumber="//input[@id='cv2']";
-	public static final String billingPostcode="//input[@id='postCode']";
+	public static final String billingPostcode_NonUK="//input[@id='zipCode']";
+	public static final String billingPostcode_UK="//input[@id='postCode']";
 	public static final String billingAddressFindButton="//button[@id='findaddress']";
 	public static final String billingAddressline1="//input[@id='address1']";
-	public static final String billingAddressline2="//input[@id='address1']";
+	public static final String billingAddressline2="//input[@id='address2']";
 	public static final String billingAddressline3="//input[@id='city']";
 	public static final String billingAddressline4="//input[@id='state']";
 	public static final String billingAddressNickName="//input[@id='nickName']";

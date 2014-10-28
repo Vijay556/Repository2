@@ -17,6 +17,11 @@ import com.selfridges.util.WebController;
 public class DeliveryOptionsChooseAddressPage {
 	
 	WebDriver driver;
+	
+	public DeliveryOptionsChooseAddressPage(WebDriver dr){
+		this.driver = dr;
+	}
+	
 	String expectedOSHeader="ORDER SUMMARY";
 	String expectedOSItemsCount=null;
 	String expectedOSPrice=null;
@@ -25,6 +30,7 @@ public class DeliveryOptionsChooseAddressPage {
 	String expectedOSLink1="More info";
 	String expectedOrderTotal=null;
 	String actualSummaryHeader=null;
+	
 	
 	
 	@FindBy(xpath=Constants.ukDeliveryRadio)
@@ -101,15 +107,9 @@ public class DeliveryOptionsChooseAddressPage {
 	WebElement intAddress2;
 	@FindBy(xpath=Constants.intCounty)
 	WebElement intCounty;
+		
 	
 	
-	
-	
-	
-	
-	public DeliveryOptionsChooseAddressPage(WebDriver dr){
-		driver=dr;
-	}
 
 	//Select UK delivery as guest and enter the fields required
 	public DeliveryOptionsChooseAddressPage ukDeliveryAsGuest(String ttl, String fName, String lName, String email, String phone, String postcode, String adr1, String adr2, String town ) throws InterruptedException{
@@ -154,15 +154,13 @@ public class DeliveryOptionsChooseAddressPage {
 	
 	public DeliveryOptionsChooseAddressPage clickAndCollectAsGuest(String ttl, String fName, String lName, String email, String phone) throws InterruptedException{
 		
-		Thread.sleep(1000);
 		//actualSummaryHeader=driver.findElement(By.xpath("//*[@id='orderSummaryPanel']/div/h2")).getText();
 		//System.out.println(actualSummaryHeader);
 		//Assert.assertEquals("Order summary header is not right", expectedOSHeader, actualSummaryHeader);
 				
-		
 		Select select=new Select(title_cc);
 		select.selectByVisibleText(ttl);
-		Thread.sleep(1000);
+		//title_cc.sendKeys(ttl);
 		firstName_cc.clear();
 		firstName_cc.sendKeys(fName);
 		lastName_cc.clear();
