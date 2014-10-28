@@ -1,23 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite failures="1" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="2" time="126.043957">
-<testcase classname="Click and collect for a guest user" name="Paying with different cards 'Visa credit' Paymentcard_2" time="67.944523">
-<failure message="java.lang.NullPointerException&#13;&#10;&#9;at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:59)&#13;&#10;&#9;at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:34)&#13;&#10;&#9;at com.sun.proxy.$Proxy43.getTagName(Unknown Source)&#13;&#10;&#9;at org.openqa.selenium.support.ui.Select.&lt;init&gt;(Select.java:43)&#13;&#10;&#9;at com.selfridges.pages.DeliveryOptionsChooseAddressPage.clickAndCollectAsGuest(DeliveryOptionsChooseAddressPage.java:163)&#13;&#10;&#9;at com.selfridges.test.ClickAndCollect.being_delivered_to_(ClickAndCollect.java:72)&#13;&#10;&#9;at ✽.And being delivered to &quot;Mr&quot;,&quot;Vijayapal&quot;,&quot;Kayyam&quot;,&quot;vijay.kayyam@gmail.com&quot;,&quot;07769359185&quot;(main/resources/com/selfridges/test/ClickAndCollect.feature:17)&#13;&#10;"><![CDATA[When I searched for "ties" and added to the basket..........................passed
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="5" time="285.021682">
+<testcase classname="Click and collect for a guest user" name="Paying with different cards 'Visa credit' Paymentcard_5" time="55.776367">
+<system-out><![CDATA[When I searched for "wine" and added to the basket..........................passed
 And I choose collection point as "London"...................................passed
-And being delivered to "Mr","Vijayapal","Kayyam","vijay.kayyam@gmail.com","07769359185".failed
-And I paid with payment card of "Visa Debit","4111111111111111","Vijayapal Kayyam","March","2015","001","United Kingdom","AL10 0UG","4 Cornerfield","Hatfield","Herts","UK".skipped
-Then I should get an order confirmation.....................................skipped
-
-StackTrace:
-java.lang.NullPointerException
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:59)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:34)
-	at com.sun.proxy.$Proxy43.getTagName(Unknown Source)
-	at org.openqa.selenium.support.ui.Select.<init>(Select.java:43)
-	at com.selfridges.pages.DeliveryOptionsChooseAddressPage.clickAndCollectAsGuest(DeliveryOptionsChooseAddressPage.java:163)
-	at com.selfridges.test.ClickAndCollect.being_delivered_to_(ClickAndCollect.java:72)
-	at ✽.And being delivered to "Mr","Vijayapal","Kayyam","vijay.kayyam@gmail.com","07769359185"(main/resources/com/selfridges/test/ClickAndCollect.feature:17)
-]]></failure>
+And being delivered to "Mr","Vijayapal","Kayyam","vijay.kayyam@gmail.com","07769359185".passed
+And I paid with payment card of "Visa Debit","4111111111111111","Vijayapal Kayyam","March","2015","001","India","503302","4 Cornerfield","Hatfield","Herts","UK".passed
+Then I should get an order confirmation.....................................passed
+]]></system-out>
 </testcase>
-<testcase classname="Click and collect for a guest user" name="Paying with different cards 'Visa credit' Paymentcard_1" time="58.099434">
+<testcase classname="Click and collect for a guest user" name="Paying with different cards 'Visa credit' Paymentcard_4" time="52.861526">
+<system-out><![CDATA[When I searched for "wallets" and added to the basket.......................passed
+And I choose collection point as "London"...................................passed
+And being delivered to "Mr","Vijayapal","Kayyam","vijay.kayyam@gmail.com","07769359185".passed
+And I paid with payment card of "Master Card","5555555555554444","Vijayapal Kayyam","March","2015","001","United Kingdom","AL10 0UG","4 Cornerfield","Hatfield","Herts","UK".passed
+Then I should get an order confirmation.....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Click and collect for a guest user" name="Paying with different cards 'Visa credit' Paymentcard_3" time="52.006326">
+<system-out><![CDATA[When I searched for "pens" and added to the basket..........................passed
+And I choose collection point as "London"...................................passed
+And being delivered to "Mr","Vijayapal","Kayyam","vijay.kayyam@gmail.com","07769359185".passed
+And I paid with payment card of "Visa Debit","4111111111111111","Vijayapal Kayyam","March","2015","001","United Kingdom","AL10 0UG","4 Cornerfield","Hatfield","Herts","UK".passed
+Then I should get an order confirmation.....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Click and collect for a guest user" name="Paying with different cards 'Visa credit' Paymentcard_2" time="64.465259">
+<system-out><![CDATA[When I searched for "ties" and added to the basket..........................passed
+And I choose collection point as "London"...................................passed
+And being delivered to "Mr","Vijayapal","Kayyam","vijay.kayyam@gmail.com","07769359185".passed
+And I paid with payment card of "Visa Debit","4111111111111111","Vijayapal Kayyam","March","2015","001","United Kingdom","AL10 0UG","4 Cornerfield","Hatfield","Herts","UK".passed
+Then I should get an order confirmation.....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Click and collect for a guest user" name="Paying with different cards 'Visa credit' Paymentcard_1" time="59.912204">
 <system-out><![CDATA[When I searched for "mugs" and added to the basket..........................passed
 And I choose collection point as "London"...................................passed
 And being delivered to "Mr","Vijayapal","Kayyam","vijay.kayyam@gmail.com","07769359185".passed

@@ -56,8 +56,10 @@ public class WebController {
 		FileInputStream fis_OR=new FileInputStream(System.getProperty("user.dir")+"//src//main//java//com//selfridges//config//OR.properties");
 	
 			OR.load(fis_OR);
-			System.out.println(OR.getProperty("Environment"));
-			System.out.println(OR.getProperty("Browser"));
+			System.out.println("OR properties file configured to test on: " + OR.getProperty("Environment") + " and the browser is: " + OR.getProperty("Browser"));
+			//System.out.println(OR.getProperty("Environment"));
+			//System.out.println("OR properties file configured to test on:");
+			//System.out.println(OR.getProperty("Browser"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			logger.error("Error in initializing OR porperties file");
@@ -74,12 +76,12 @@ public class WebController {
 			logger.error("Error in initializing ENV porperties file ");
 			e.printStackTrace();
 		}
-		System.out.println(ENV.getProperty("URL"));
+		System.out.println("URL configured in ENV file is " + ENV.getProperty("URL"));
 	}
 	
 	
 	public static WebController getInstance(){
-		System.out.println("Initializing the instance");
+		System.out.println("Initializing the instance, this is first line in get instance method");
 		logger.info("Initializing WebController instance");
 		if(instance == null){
 		instance = new WebController();
@@ -106,7 +108,7 @@ public class WebController {
 		
 		if(driver==null){
 			if(browserType.equalsIgnoreCase("Mozilla")){
-				System.out.println("Browser type is Mozilla");
+				System.out.println("Opening Mozilla");
 				driver=new FirefoxDriver();
 				driver.manage().window().maximize();
 				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -223,12 +225,16 @@ public class WebController {
 	}
 	
 	public void goToURL(String URL){
-		System.out.println(ENV.getProperty(URL));
+		System.out.println("Navigating to : " + ENV.getProperty(URL));
 		driver.get(ENV.getProperty(URL));
+		System.out.println("On Home page now");
 	}
 	public void closeBrowser(){
 		//System.out.println(ENV.getProperty(URL));
-		driver.quit();
+		System.out.println("Browser is closing now");
+	    driver.quit();
+	    driver = null;
+	    System.out.println("Browser is now closed");
 	}
 	
 	

@@ -1,4 +1,4 @@
-package com.selfridges.test;
+/*package com.selfridges.test;
 
 import junit.framework.Assert;
 
@@ -33,7 +33,7 @@ public class vijay1 {
 		System.out.println("Running before method");
 		controller.invokeBrowser();
 		controller.goToURL("HomePageURL");
-	}
+	
 	
 	@After
 	public void tearDown(Scenario scenario){
@@ -43,7 +43,7 @@ public class vijay1 {
 	            final byte[] screenshot = ((TakesScreenshot) controller.driver).getScreenshotAs(OutputType.BYTES);
 	            scenario.embed(screenshot, "image/png");
 	    }
-	   // controller.closeBrowser();		
+	   //controller.closeBrowser();		
 	}
 	
 	@SuppressWarnings("deprecation")
@@ -66,10 +66,10 @@ public class vijay1 {
 		return pp;
 	}
  
-	/*@When("^I paid towards my product with \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\"$")
+	@When("^I paid towards my product with \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\"$")
 	public void I_paid_towards_my_product_with_(String cardNumber, String nameOnCard, String expMonth, String expYear, String cvv, String postcode, String line1, String line2, String line3, String line4) throws Throwable {
 		pp.payWithNewCard(cardNumber,nameOnCard,expMonth,expYear,cvv,postcode,line1,line2,line3,line4);
-	}*/	
+	}	
 	    
 	@Then("^I should get an order confirmation$")
 	public void I_should_get_an_order_confirmation() throws Throwable {
@@ -85,3 +85,4 @@ public class vijay1 {
 	   
 	}
 }
+*/

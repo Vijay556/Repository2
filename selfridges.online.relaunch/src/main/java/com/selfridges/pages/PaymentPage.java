@@ -26,8 +26,10 @@ public class PaymentPage {
 	WebElement issueYear;
 	@FindBy(xpath=Constants.cvvNumber)
 	WebElement cvvNumber;
-	@FindBy(xpath=Constants.billingPostcode)
-	WebElement billingPostcode;
+	@FindBy(xpath=Constants.billingPostcode_UK)
+	WebElement billingPostcode_UK;
+	@FindBy(xpath=Constants.billingPostcode_NonUK)
+	WebElement billingPostcode_NonUK;
 	@FindBy(xpath=Constants.billingAddressFindButton)
 	WebElement billingAddressFindButton;
 	@FindBy(xpath=Constants.billingAddressline1)
@@ -69,6 +71,7 @@ public class PaymentPage {
 		selectCardType.selectByVisibleText(cardType);
 		Select selectCountryName = new Select(billingCountryName);
 		selectCountryName.selectByVisibleText(countryName);
+		//billingCountryName.sendKeys(countryName);
 		cardNumber.clear();
 		cardNumber.sendKeys(cardNum);
 		nameOnCard.clear();
@@ -79,8 +82,14 @@ public class PaymentPage {
 		selectExpYear.selectByVisibleText(expYear);
 		cvvNumber.clear();
 		cvvNumber.sendKeys(cvv);
-		billingPostcode.clear();
-		billingPostcode.sendKeys(postcode);
+		
+		if(countryName.equals("United Kingdom")){
+			billingPostcode_UK.clear();
+			billingPostcode_UK.sendKeys(postcode);	
+		} else {
+			billingPostcode_NonUK.clear();
+			billingPostcode_NonUK.sendKeys(postcode);
+		}
 		billingAddressline1.clear();
 		billingAddressline1.sendKeys(line1);
 		billingAddressline2.clear();

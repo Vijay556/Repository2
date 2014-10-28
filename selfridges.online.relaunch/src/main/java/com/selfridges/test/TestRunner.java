@@ -19,6 +19,4 @@ import cucumber.api.junit.Cucumber;
 //@Dcucumber.options(--tags @runThis --tags ~@ignore --format json-pretty:target/cucumber-report-myReport.json --format html:target/cucumber-html-report-myReport)
 public class TestRunner {
 
-
-
 }

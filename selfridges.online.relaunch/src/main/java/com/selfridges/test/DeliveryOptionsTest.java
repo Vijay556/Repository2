@@ -1,4 +1,4 @@
-package com.selfridges.test;
+/*package com.selfridges.test;
 
 import org.openqa.selenium.By;
 import org.apache.commons.io.FileUtils;
@@ -70,7 +70,7 @@ public class DeliveryOptionsTest{
 		gop=dop.continueToOrderSummaryRight();
 		return gop;	    
 	    
-}*/
+}
 	
 	@Then("^Change the store to \"([^\"]*)\"$")
 	public void Change_the_store_to(String store) throws Throwable {	    
@@ -78,7 +78,7 @@ public class DeliveryOptionsTest{
 		gop1.payNowByTopBtn();
 	}
 	
-	/*@Then("^I should be able to do International delivery as guest by entering ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*)$")
+	@Then("^I should be able to do International delivery as guest by entering ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*), ([^\"]*)$")
 	public void I_should_be_able_to_do_International_delivery(String ttl, String fName, String lName, String email, String phone, String postcode, String adr1, String adr2, String town, String country) throws Throwable {
 		dop.intDeliveryAsGuest(ttl, fName, lName, email,phone, postcode, adr1, adr2, town, country).continueToOrderSummaryRight();
 	    
@@ -88,7 +88,7 @@ public class DeliveryOptionsTest{
 	public void I_do_check_out_as_a_user() throws Throwable {
 		gm.checkOut().userCheckOut("email", "password").clickAndCollectAsUser("London").continueToOrderSummaryRight();
 	    
-	}*/
+	}
 
 	@Then("^I should be able to do UK delivery as a user$")
 	public void I_should_be_able_to_do_UK_delivery_as_a_user() throws Throwable {
@@ -102,3 +102,4 @@ public class DeliveryOptionsTest{
 	
 
 }
+*/

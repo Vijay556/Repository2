@@ -1,4 +1,4 @@
-package com.selfridges.test;
+/*package com.selfridges.test;
 
 import java.lang.reflect.Field;
 
@@ -93,3 +93,4 @@ public class LoginTest {
 	   log.info(ordersAndReturns);
 	}
 }
+*/
