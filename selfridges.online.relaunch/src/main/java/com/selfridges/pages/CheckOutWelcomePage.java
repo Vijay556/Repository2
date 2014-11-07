@@ -11,8 +11,8 @@ import com.selfridges.util.WebController;
 public class CheckOutWelcomePage {
 	public WebDriver driver;
 	WebController controller=WebController.getInstance();
-	@FindBy(xpath=Constants.guestCheckOut)
-	WebElement guestCheckOut;
+	@FindBy(linkText = Constants.continueToCheckoutAsAGuestOrANewUserButton)
+	WebElement continueToCheckoutAsAGuestOrANewUserButton;
 	@FindBy(xpath=Constants.email)
 	WebElement email;
 	@FindBy(xpath=Constants.password)
@@ -43,9 +43,9 @@ public class CheckOutWelcomePage {
 		
 	}
 	
-	public DeliveryOptionsChooseAddressPage guestCheckOut(){		
-		guestCheckOut.click();
-		return PageFactory.initElements(driver, DeliveryOptionsChooseAddressPage.class);
+	public CheckoutYourDetailsTab continueToCheckoutAsAGuestOrANewUser(){		
+		continueToCheckoutAsAGuestOrANewUserButton.click();
+		return PageFactory.initElements(driver, CheckoutYourDetailsTab.class);
 	}
 	
 	public SignUpPage signUpNow(){

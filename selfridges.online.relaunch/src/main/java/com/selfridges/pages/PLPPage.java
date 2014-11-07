@@ -1,5 +1,7 @@
 package com.selfridges.pages;
 
+//import java.awt.List;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -35,12 +37,51 @@ public class PLPPage {
 	WebElement secondProduct;
 	@FindBy(xpath=Constants.addToBagPLP)
 	WebElement addToBagPLP;
+	@FindBy(xpath=Constants.lhnHeaderRefineBy)
+	WebElement lhnHeaderRefineBy;
+	@FindBy(xpath=Constants.lhnRefinemntOption1)
+	WebElement lhnRefinemntOption1;
+	@FindBy(xpath=Constants.lhnRefinemntOption2)
+	WebElement lhnRefinemntOption2;
+	@FindBy(xpath=Constants.lhnRefinemntOption3)
+	WebElement lhnRefinemntOption3;
+	@FindBy(xpath=Constants.lhnRefinemntOption4)
+	WebElement lhnRefinemntOption4;
+	@FindBy(xpath=Constants.lhnRefinemntOption5)
+	WebElement lhnRefinemntOption5;
+	@FindBy(xpath=Constants.lhnRefinemntOption6)
+	WebElement lhnRefinemntOption6;
+	@FindBy(xpath=Constants.lhnRefinemntOption7)
+	WebElement lhnRefinemntOption7;
+	@FindBy(xpath=Constants.lhnRefinemntOptions)
+	List<WebElement> lhnRefinemntOptions;
 	
 	WebDriver driver;
 	
 	public PLPPage(WebDriver dr){
 		driver=dr;
 	}
+	
+	public boolean isThisPLPPage() {
+		String[] refinementOptions;
+		refinementOptions = availableRefinemntOptions();
+		System.out.println("Number of refinement options are: " + refinementOptions.length + "  and they are: ");
+		for (String temp: refinementOptions)
+			System.out.println(temp);
+		if(firstProduct.isDisplayed() && lhnHeaderRefineBy.isDisplayed() && refinementOptions.length >= 1)			
+			return true; 
+		else 
+			return false;
+	}
+	
+	public String[] availableRefinemntOptions(){
+		String[] temp;
+		List<WebElement> options = lhnRefinemntOptions;
+		 temp = new String[options.size()];
+		    for(int i=0; i<options.size(); i++) 
+		       temp[i] = options.get(i).getText();
+		 return temp;
+		}
 	
 	public void selectPageViews(int views){
 		
@@ -62,7 +103,6 @@ public class PLPPage {
 		sortByDropdown.sendKeys(sortyBy);
 		sortByDropdown.sendKeys(Keys.ENTER);
 		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-		
 	}
 	
 	public void goToNextPage(){
@@ -152,15 +192,12 @@ public class PLPPage {
 	}
 	
 public PDPPage goToPDPOfSecondProduct(){
-		
 		secondProduct.click();
 		return PageFactory.initElements(driver, PDPPage.class);
-		
 	}
 	
 	public QuickViewPage addToBag(){
 		addToBagPLP.click();
 		return PageFactory.initElements(driver, QuickViewPage.class);
 	}
-
 }

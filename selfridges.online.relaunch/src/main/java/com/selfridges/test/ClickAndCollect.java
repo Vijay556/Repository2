@@ -6,6 +6,8 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.support.PageFactory;
 
+import com.selfridges.pages.CheckoutDeliveryTab;
+import com.selfridges.pages.CheckoutYourDetailsTab;
 import com.selfridges.pages.DeliveryOptionsChooseAddressPage;
 import com.selfridges.pages.DeliveryOptionsPage2;
 import com.selfridges.pages.GlobalMenu;
@@ -26,12 +28,12 @@ public class ClickAndCollect {
 	
 	WebController controller;
 	GlobalMenu gm = null;
-	//HomePage hp = PageFactory.initElements(controller.driver, HomePage.class);
+	HomePage hp = null;
 	//PaymentPage pp = PageFactory.initElements(controller.driver, PaymentPage.class);
 	DeliveryOptionsChooseAddressPage doca;// = PageFactory.initElements(controller.driver, DeliveryOptionsChooseAddressPage.class);
 	DeliveryOptionsPage2 dop2; //= PageFactory.initElements(controller.driver, DeliveryOptionsPage2.class);
-	OrderConfirmationPage ocp;// = PageFactory.initElements(controller.driver, OrderConfirmationPage.class);
-	
+	OrderConfirmationPage ocp; // = PageFactory.initElements(controller.driver, OrderConfirmationPage.class);
+	CheckoutDeliveryTab cdt;
 	@Before
 	public void setUp(){
 		System.out.println("Running before method");
@@ -53,29 +55,31 @@ public class ClickAndCollect {
 	}
 	
 	@SuppressWarnings("deprecation")
-	@Given("^Im on Selfridges website$")
+	@Given("^I am on Selfridges website$")
 	public void Im_on_Selfridges_website() throws Throwable {
-	//    Assert.assertTrue("Sorry You are not on the home page", ((hp.GetHomePageUrl().contains("selfridges.com")) && (!hp.GetHomePageUrl().contains("selfridges.com/"))));
+		hp = PageFactory.initElements(controller.driver, HomePage.class);
+	  Assert.assertFalse("Sorry You are not on the home page", ((hp.GetHomePageUrl().contains("selfridges.com")) && (!hp.GetHomePageUrl().contains("selfridges.com/"))));
 	}
 	
 	@When("^I searched for \"([^\"]*)\" and added to the basket$")
 	public void I_searched_for_and_added_to_the_basket(String arg1) throws Throwable {
 		gm = PageFactory.initElements(controller.driver, GlobalMenu.class);
-		gm.searchProduct(arg1).goToPDPOfSecondProduct().addToBag();	    
-	}
-
-	@When("^I choose collection point as \"([^\"]*)\"$")
-	public void I_choose_collection_point_as(String arg1) throws Throwable {
-	   //DeliveryOptionsChooseAddressPage
-		gm.clickBasketIcon().continueToCheckOut().guestCheckOut().chooseClickAndCollect().chooseStore(arg1);	    
+		gm.searchProduct(arg1).goToPDPOfFirstProduct().addToBag();	    
 	}
 
 	@When("^being delivered to \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\"$")
 	public void being_delivered_to_(String arg1, String arg2, String arg3, String arg4, String arg5) throws Throwable {
 		//DeliveryOptionsPage2
-		doca = PageFactory.initElements(controller.driver, DeliveryOptionsChooseAddressPage.class);
-		 doca.clickAndCollectAsGuest(arg1, arg2, arg3, arg4, arg5).clickOnOrderSummaryButtonOnRight();
 		
+		gm.clickBasketIcon().continueToCheckOut().continueToCheckoutAsAGuestOrANewUser().continueToDeliveryTabAsAGuestUserWith(arg1, arg2, arg3, arg4, arg5);
+	}
+	
+	@When("^I choose collection point as \"([^\"]*)\"$")
+	public void I_choose_collection_point_as(String store) throws Throwable {
+	   //DeliveryOptionsChooseAddressPage
+		cdt = PageFactory.initElements(controller.driver, CheckoutDeliveryTab.class);
+		cdt.continueToPaymentTab(store);
+		//gm.clickBasketIcon().continueToCheckOut().continueToCheckoutAsAGuestOrANewUser().chooseClickAndCollect().chooseStore(arg1);	    
 	}
 
 	@When("^I paid with payment card of \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\"$")

@@ -48,6 +48,7 @@ public WebDriver driver;
 	public PLPPage searchProduct(String product){
 	
 		searchIcon.click();
+		searchInput.clear();
 		searchInput.sendKeys(product);
 		searchInput.sendKeys(Keys.ENTER);
 		return PageFactory.initElements(driver, PLPPage.class);

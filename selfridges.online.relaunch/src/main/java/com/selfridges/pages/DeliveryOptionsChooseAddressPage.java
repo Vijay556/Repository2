@@ -177,9 +177,9 @@ public class DeliveryOptionsChooseAddressPage {
 			londonStore_cc.click();
 		else if(storeName.equalsIgnoreCase("Birmingham"))
 			birminghamStore_cc.click();
-		else if(storeName.equalsIgnoreCase("Manchester Trafford"))
+		else if(storeName.equalsIgnoreCase("Trafford"))
 			manchesterTraffordStore_cc.click();
-		else if(storeName.equalsIgnoreCase("Manchester Exchange Square"))
+		else if(storeName.equalsIgnoreCase("ExchangeSquare"))
 			manchesterExchangeSotre_cc.click();
 		actualSummaryHeader=driver.findElement(By.xpath("//*[@id='orderSummaryPanel']/div/h2")).getText();
 		System.out.println(actualSummaryHeader);						

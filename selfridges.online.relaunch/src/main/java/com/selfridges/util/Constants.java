@@ -14,10 +14,7 @@ public class Constants {
 	public static final String nextArrow_xpath="//*[@id='main']/div[1]/div[2]/div/div/div/a[2]";
 	public static final String previousArrow_xpath="//*[@id='main']/div[1]/div[2]/div/div/div/a[1]";
 	
-	
-	
 	//PLP Page element identifiers
-	
 	public static final String pageviews60="//*[@id='paginationHeader']/div/div[2]/ul/li[1]";
 	public static final String pageviews180="//*[@id='paginationHeader']/div/div[2]/ul/li[2]/a";
 	public static final String sortByDropdown="//*[@id='fh_sort_by']";
@@ -31,6 +28,22 @@ public class Constants {
 	public static final String secondProduct="//*[@id='galImgId1']";
 	public static final String product_part1="//*[@id='galImgId";
 	public static final String product_part2="']";
+	public static final String lhnHeaderRefineBy = "//a[@id='refineBy']";
+	public static final String lhnRefinemntOption1 = "//div[@id='leftNav']/div[2]/h3";
+	public static final String lhnRefinemntOption2 = "//div[@id='leftNav']/div[3]/h3";
+	public static final String lhnRefinemntOption3 = "//div[@id='leftNav']/div[4]/h3";
+	public static final String lhnRefinemntOption4 = "//div[@id='leftNav']/div[5]/h3";
+	public static final String lhnRefinemntOption5 = "//div[@id='leftNav']/div[6]/h3";
+	public static final String lhnRefinemntOption6 = "//div[@id='leftNav']/div[5]/h3";
+	public static final String lhnRefinemntOption7 = "//div[@id='leftNav']/div[6]/h3";
+	public static final String lhnRefinemntOptions = "//div[@id='leftNav']/div/h3";
+	
+	//No Search results page
+	public static final String nosearchResultsText = "//form[@id='frmFreeTextSearchForm']/h1";
+	public static final String sorryCouldnotFindTheTermText = "//div[@id='noSearchResults_espot_1']/div/div/h3";
+	public static final String searchTextField = "//input[@id='searchbox']";
+	public static final String recentlyViewedItemsSection = "div.recentViewed > h2";//div[@id='no_search_results']/div/h2";
+	public static final String submitButton = "searchSubmit";
 	
 	//My bag (Shopping summary page)
 	
@@ -122,7 +135,7 @@ public class Constants {
 	
 	
 	//Checkout options page
-	public static final String guestCheckOut="//*[@class='guest']/a/span";
+	public static final String continueToCheckoutAsAGuestOrANewUserButton = "CONTINUE TO THE CHECKOUT";
 	public static final String userCheckOut="//*[@id='signInSection']/div[2]/div[2]/form/fieldset/div[4]/button";
 	public static final String signUpNow="//*[@id='signInSection']/div[3]/div[2]/ul/li[1]/a/span";
 	public static final String email="//*[@id='logonId']";
@@ -157,5 +170,58 @@ public class Constants {
 	public static final String thankYouForYourOrderText="//h2";
 	public static final String billingCountryName = "//select[@id='country']";
 	public static final String cardType = "//select[@id='checkoutCardType']";
+	
+	//Your details tab
+	public static final String yourDetailsText = "h3";
+	public static final String titleDropDown = "TITLE";
+	public static final String mr = "MR";
+	public static final String mrs = "MRS";
+	public static final String ms = "MS";
+	public static final String miss = "MISS";
+	public static final String dr = "DR";
+	public static final String firstNameField = "firstName";
+	public static final String lastNameField = "lastName";
+	public static final String emailAddressField = "registerLogonId";
+	//createPasswordRadio_no
+	//div.singleInput.radioGroup > label
+	//createPasswordRadio_yes
+	////div[@id='guestPwd']/div/div[2]/label[2]
+	public static final String phoneNumberField = "";
+	public static final String whyEmailIsUsedForText = "";
+	public static final String createPasswordRadioButton = "";
+	public static final String continueToDeliveryButton = "checkoutSubmit1";
+	public static final String passwordForAutoRecognisedEmail = "";
+	public static final String resetPasswordLinkForAutoRecognisedEmail = "";
+	public static final String creatingANewUserPasswordField = "logonPassword";
+	public static final String creatingANewUserRepeatPasswordField = "logonPasswordVerify";
+	public static final String emailOptoutCheckBox = "";
+	public static final String AutoRecognisedEmailText = "";//We've noticed that you've entered a registered e-mail address.\n Please enter your password.\n If you don't know your password you can reset your password.
 		
+	
+	//Delivery tab
+	public static final String deliveryRadio1 = "selectHomeDelivery";
+	public static final String deliveryRadio2 = "//div[@id='deliveryChoices']/div/label";
+	public static final String clickAndCollectRadio1 = "selectClickAndCollect";
+	public static final String clickAndCollectRadio2 = "//div[@id='deliveryChoices']/div[2]/label";
+	
+	public static final String londonStoreRadio1 = "address_1";
+	public static final String londonStoreRadio2 = "//div[@id='clickCollectStoresSelect']/div[1]/div/label";
+	public static final String birminghamStoreRadio1 = "address_3";
+	public static final String birminghamStoreRadio2 = "//div[@id='clickCollectStoresSelect']/div[2]/div/label";
+	public static final String traffordStoreradio1 = "address_2";
+	public static final String traffordStoreradio2 = "//div[@id='clickCollectStoresSelect']/div[3]/div/label";
+	public static final String exchangeSquareStroeRadio1 = "address_4";
+	public static final String exchangeSquareStroeRadio2 = "//div[@id='clickCollectStoresSelect']/div[4]/div/label";
+		
+	public static final String day1Part1 = "selectedCalendarDate_1";
+	public static final String day1Part2 = "//div[@id='calendar']/table/tbody/tr[1]/td[1]/label";
+	public static final String day2Part1 = "selectedCalendarDate_2";
+	public static final String day2Part2 = "//div[@id='calendar']/table/tbody/tr[1]/td[2]/label";
+	public static final String isThisAGiftCheckBoxPart1 = "item-is-gift-1";
+	public static final String isThisAGiftCheckBoxPart2 = "div.giftWrapDetails > label";
+	public static final String giftPackagingPart1 = "Gift-998-1-1-1";
+	//public static final String giftPackagingPart2 = "div.giftWrapAndMessage > label";
+	public static final String giftMessageTextField = "Gift-999-1-1";
+	public static final String continueToPaymentTab = "giftingContinueToPaymentButton";
+	
 }

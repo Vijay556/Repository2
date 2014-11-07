@@ -183,7 +183,6 @@ public class WebController {
 		subElement.click();
 		Thread.sleep(2000);
 		
-		
 	}
 	
 	public void clickHiddenLinkDragAndDrop(String mainLink, String subLink, String target){
@@ -208,14 +207,11 @@ public class WebController {
 	}
 	
 	
-	
 	public boolean isLoggedIn(){
 		
 		boolean loggedIn = isTextPresent("My account","MyAccountmenu_link");
 		return loggedIn;
 	}
-
-
 
 	public void moveMouse(String object) {
 		builder=new Actions(driver);
