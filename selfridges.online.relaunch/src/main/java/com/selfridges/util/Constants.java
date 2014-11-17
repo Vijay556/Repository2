@@ -163,8 +163,8 @@ public class Constants {
 	public static final String placeorderButton="//button[@id='summaryPlaceOrder1']";
 
 	//Order confirmation page
-    public static final String orderConfirmationNumber="//p[@class='ordernumber']";
-	public static final String emailSentConfirmationText="//p[@class='multipleDelivery']";
+    public static final String orderConfirmationNumber="//div[@id='orderDetails']/div[2]/span[2]";
+	public static final String emailSentConfirmationText="span.value";
 	public static final String printreceiptButton="//a[@class='printReceipt btnR btnR3']";
 	public static final String continueShoppingButton="//a[@class='btnR']";
 	public static final String thankYouForYourOrderText="//h2";
@@ -174,11 +174,11 @@ public class Constants {
 	//Your details tab
 	public static final String yourDetailsText = "h3";
 	public static final String titleDropDown = "TITLE";
-	public static final String mr = "MR";
-	public static final String mrs = "MRS";
-	public static final String ms = "MS";
-	public static final String miss = "MISS";
-	public static final String dr = "DR";
+	public static final String mr = "Mr";
+	public static final String mrs = "Mrs";
+	public static final String ms = "Ms";
+	public static final String miss = "Miss";
+	public static final String dr = "Dr";
 	public static final String firstNameField = "firstName";
 	public static final String lastNameField = "lastName";
 	public static final String emailAddressField = "registerLogonId";
@@ -224,4 +224,32 @@ public class Constants {
 	public static final String giftMessageTextField = "Gift-999-1-1";
 	public static final String continueToPaymentTab = "giftingContinueToPaymentButton";
 	
+	//Payment tab
+	public static final String payWithNewDebitCreditCardRadio = "newcard";
+	//public static final String selectCardTypePleaseChoose = "#dk_container_checkoutCardType > a.dk_toggle.dk_label > span.dkImgLabelH";//"Please Choose";
+	public static final String selectCardTypePleaseChoose = "Please Choose";
+	public static final String selectVisa = "Visa";
+	public static final String selectVisaDebit = "Visa Debit";
+	public static final String selectMasterCard = "Master Card";
+	public static final String selectAmericanExpress = "American Express";
+	public static final String selectMaestroCard = "Maestro Card";
+	public static final String selectElectron = "Electron";
+	
+	public static final String cardNumberField = "cardnumber";
+	public static final String nameOnCardField = "cardholder";
+	public static final String expiryMonthDropdown = "MM";
+	public static final String expiryYearDropdown = "YY";
+	public static final String cv2 = "cv2";
+	public static final String payNowButton = "payNow";
+	public static final String addNewBillingAddressForNewCard = "addBillingAddressForNewCard";
+	public static final String billingAddressTitle = "Title";
+	public static final String firstNameAddBillingAddress = "div.singleInput > #firstName";//"firstName";
+	public static final String lastNameAddBillingAddress = "div.singleInput > #lastName";//"lastName";
+	public static final String contactNumberAddBillingAddress = "phone1";
+	public static final String housenameOrNumberAddBillingAddress = "premises";
+	public static final String postCodeAddBillingAddress = "zipCode";
+	public static final String findAddressButtonAddBillingAddress = "findaddress";
+	public static final String saveAddressButtonAddBillingAddress = "saveAddress";
+	public static final String addressAddedConfirmationSuccessContinueButton = "CONTINUE";
+	public static final String placeOrderButtonButton = "payNow";
 }

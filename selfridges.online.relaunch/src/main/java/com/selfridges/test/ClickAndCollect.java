@@ -7,6 +7,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.support.PageFactory;
 
 import com.selfridges.pages.CheckoutDeliveryTab;
+import com.selfridges.pages.CheckoutOrderConfirmationTab;
+import com.selfridges.pages.CheckoutPaymentTab;
 import com.selfridges.pages.CheckoutYourDetailsTab;
 import com.selfridges.pages.DeliveryOptionsChooseAddressPage;
 import com.selfridges.pages.DeliveryOptionsPage2;
@@ -32,8 +34,9 @@ public class ClickAndCollect {
 	//PaymentPage pp = PageFactory.initElements(controller.driver, PaymentPage.class);
 	DeliveryOptionsChooseAddressPage doca;// = PageFactory.initElements(controller.driver, DeliveryOptionsChooseAddressPage.class);
 	DeliveryOptionsPage2 dop2; //= PageFactory.initElements(controller.driver, DeliveryOptionsPage2.class);
-	OrderConfirmationPage ocp; // = PageFactory.initElements(controller.driver, OrderConfirmationPage.class);
+	CheckoutOrderConfirmationTab coct; // = PageFactory.initElements(controller.driver, OrderConfirmationPage.class);
 	CheckoutDeliveryTab cdt;
+	CheckoutPaymentTab cpt;
 	@Before
 	public void setUp(){
 		System.out.println("Running before method");
@@ -81,21 +84,30 @@ public class ClickAndCollect {
 		cdt.continueToPaymentTab(store);
 		//gm.clickBasketIcon().continueToCheckOut().continueToCheckoutAsAGuestOrANewUser().chooseClickAndCollect().chooseStore(arg1);	    
 	}
-
-	@When("^I paid with payment card of \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\"$")
+ 
+	@When("^I paid with payment card of \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\"$")
+	public void I_paid_with_payment_card_of_(String cardType, String cardNum, String cardName, String expMonth, String expYear, String cvv, String title, String fname, String lname, String phone, String countryName, String postcode, String line1, String line2, String line3, String line4) throws Throwable {
+		cpt = PageFactory.initElements(controller.driver, CheckoutPaymentTab.class);
+		cpt.placeAnOrderWithOnlyNewDebitCreditCard(cardType, cardNum, cardName, expMonth, expYear, cvv, title, fname, lname, phone, countryName,postcode,  line1, line2, line3, line4);
+		
+		
+			
+				}
+	/*@When("^I paid with payment card of \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\"$")
 	public void I_paid_with_payment_card_of_(String cardType, String cardNum, String cardName, String expMonth, String expYear, String cvv, String postcode, String countryName, String line1, String line2, String line3, String line4) throws Throwable {
 	    //OrderConfirmationPage
 		
-		dop2 = PageFactory.initElements(controller.driver, DeliveryOptionsPage2.class);
-		dop2.selectFirstAvailableCollectionDate().clickOnPayNowButton1().payWithNewCard(cardType, cardNum, cardName, expMonth, expYear, cvv, postcode, countryName, line1, line2, line3, line4).placeOrder();
-	}
+		cpt = PageFactory.initElements(controller.driver, CheckoutPaymentTab.class);
+		cpt.placeAnOrderWithOnlyNewDebitCreditCard(cardType, cardNum, cardName, expMonth, expYear, cvv, postcode, countryName, line1, line2, line3, line4);
+	}*/
+	
 	@Then("^I should get an order confirmation$")
 	public void I_should_get_an_order_confirmation() throws Throwable {
-		ocp = PageFactory.initElements(controller.driver, OrderConfirmationPage.class);
-		System.out.println(ocp.getOrderConfirmationNumer());
-		Assert.assertTrue("Order not placed successfully", ocp.isConfirmationNumerGenerated());
+		coct = PageFactory.initElements(controller.driver, CheckoutOrderConfirmationTab.class);
+		System.out.println(coct.getOrderConfirmationNumer());
+		Assert.assertTrue("Order not placed successfully", coct.isConfirmationNumerGenerated());
 		//Assert.assertTrue("ThankYou Message not displayed", ocp.isThankYouMessageTextDispalyed());
-		Assert.assertTrue("Email sent confirmation information not displayed", ocp.isEmailConfirmationTextDispalyed());
+		Assert.assertTrue("Email sent confirmation information not displayed", coct.isEmailConfirmationTextDispalyed());
 		
 	}
 }
