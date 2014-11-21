@@ -1,5 +1,6 @@
 package com.selfridges.pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -75,12 +76,14 @@ public CheckoutDeliveryTab continueToDeliveryTabAsAGuestUserWith(String ttl, Str
 	lastNameField.sendKeys(lName);
 	emailAddressField.clear();
 	emailAddressField.sendKeys(email);
-	emailAddressField.sendKeys(Keys.TAB);
+	//emailAddressField.sendKeys(Keys.TAB);
 	//phoneNumberField.clear();
 	//phoneNumberField.sendKeys(phone);
 	//driver.action.send_keys(elementVisible, :tab).send_keys(elementVisible, :return).perform;
 	//continueToDeliveryButton.w
+	Thread.sleep(2000);
 	continueToDeliveryButton.click();
+	//((JavascriptExecutor)driver).executeScript("arguments[0].checked = true;", continueToDeliveryButton);
 	return PageFactory.initElements(driver, CheckoutDeliveryTab.class);
  }
 }

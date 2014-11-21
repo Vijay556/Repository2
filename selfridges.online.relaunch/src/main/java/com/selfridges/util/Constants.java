@@ -223,6 +223,8 @@ public class Constants {
 	//public static final String giftPackagingPart2 = "div.giftWrapAndMessage > label";
 	public static final String giftMessageTextField = "Gift-999-1-1";
 	public static final String continueToPaymentTab = "giftingContinueToPaymentButton";
+	public static final String phoneNumber = "_phone1";
+	
 	
 	//Payment tab
 	public static final String payWithNewDebitCreditCardRadio = "newcard";

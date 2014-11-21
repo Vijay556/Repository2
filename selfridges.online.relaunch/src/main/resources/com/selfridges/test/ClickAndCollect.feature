@@ -2,7 +2,7 @@ Feature: Click and collect for a guest user
    
 Background: Given Im on Selfridges website   
 
-@RunOnlyThis
+
 Scenario Outline: Paying with different cards 'Visa credit' Paymentcard
 
 When I searched for "<ItemNname>" and added to the basket

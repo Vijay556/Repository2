@@ -58,8 +58,8 @@ WebDriver driver;
 	@FindBy(id = Constants.continueToPaymentTab)
 	WebElement continueToPaymentTab;	
 	
-   public CheckoutPaymentTab continueToPaymentTab(String store) throws InterruptedException{
-	   selectcomplimentaryClickAndCollect();
+   public CheckoutPaymentTab continueToPaymentTabBySelectingToChooseToCollectFrom(String store) throws InterruptedException{
+	   selectComplimentaryClickAndCollect();
 	   if (store.equalsIgnoreCase("London"))
 		   selectLondonStroe();
 	   else if (store.equalsIgnoreCase("Birmingham"))
@@ -73,7 +73,20 @@ WebDriver driver;
 	   return  PageFactory.initElements(driver, CheckoutPaymentTab.class);
 }
    
-   public void CheckTheCheckBoxIsThisAGift(){
+   public CheckoutPaymentTab continueToPaymentTabWithDeliveryAddressAs(String country, String line1, String line2, String line3, String line4, String postcode, String phoneString ) throws InterruptedException{
+	   selectHomeDelivery();
+	   
+	   continueToPaymentTab.click();
+	   return  PageFactory.initElements(driver, CheckoutPaymentTab.class);
+}
+   
+   
+   private void selectComplimentaryClickAndCollect() {
+	   clickAndCollectRadio2.click();
+	
+}
+
+public void CheckTheCheckBoxIsThisAGift(){
 	     if(!isThisAGiftCheckBoxPart1.isSelected())
 	    	 isThisAGiftCheckBoxPart1.click();
            }
@@ -91,11 +104,6 @@ WebDriver driver;
    public void selectHomeDelivery(){
 	     //deliveryRadio1.click();
 	     deliveryRadio2.click();
-          }
-
-   public void selectcomplimentaryClickAndCollect(){
-	     //clickAndCollectRadio1.click();
-	     clickAndCollectRadio2.click();
           }
    
    public void selectLondonStroe(){

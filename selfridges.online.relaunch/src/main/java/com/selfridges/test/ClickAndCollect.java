@@ -81,7 +81,7 @@ public class ClickAndCollect {
 	public void I_choose_collection_point_as(String store) throws Throwable {
 	   //DeliveryOptionsChooseAddressPage
 		cdt = PageFactory.initElements(controller.driver, CheckoutDeliveryTab.class);
-		cdt.continueToPaymentTab(store);
+		cdt.continueToPaymentTabBySelectingToChooseToCollectFrom(store);
 		//gm.clickBasketIcon().continueToCheckOut().continueToCheckoutAsAGuestOrANewUser().chooseClickAndCollect().chooseStore(arg1);	    
 	}
  
@@ -89,9 +89,7 @@ public class ClickAndCollect {
 	public void I_paid_with_payment_card_of_(String cardType, String cardNum, String cardName, String expMonth, String expYear, String cvv, String title, String fname, String lname, String phone, String countryName, String postcode, String line1, String line2, String line3, String line4) throws Throwable {
 		cpt = PageFactory.initElements(controller.driver, CheckoutPaymentTab.class);
 		cpt.placeAnOrderWithOnlyNewDebitCreditCard(cardType, cardNum, cardName, expMonth, expYear, cvv, title, fname, lname, phone, countryName,postcode,  line1, line2, line3, line4);
-		
-		
-			
+				
 				}
 	/*@When("^I paid with payment card of \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\"$")
 	public void I_paid_with_payment_card_of_(String cardType, String cardNum, String cardName, String expMonth, String expYear, String cvv, String postcode, String countryName, String line1, String line2, String line3, String line4) throws Throwable {
