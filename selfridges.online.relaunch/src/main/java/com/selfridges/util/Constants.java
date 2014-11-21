@@ -252,4 +252,5 @@ public class Constants {
 	public static final String saveAddressButtonAddBillingAddress = "saveAddress";
 	public static final String addressAddedConfirmationSuccessContinueButton = "CONTINUE";
 	public static final String placeOrderButtonButton = "payNow";
+	public static final String payWithGiftCard = "#giftcardsection > div.radioGroup > label";
 }

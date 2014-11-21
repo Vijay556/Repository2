@@ -110,4 +110,10 @@ public class ClickAndCollect {
 		Assert.assertTrue("Email sent confirmation information not displayed", coct.isEmailConfirmationTextDispalyed());
 		
 	}
+	
+	/*@Given("^I paid with a gift card \"([^\"]*)\", \"([^\"]*)\"$")
+	public void I_paid_with_a_gift_card_(String arg1, String arg2) throws Throwable {
+		cpt
+	    
+	}*/
 }
