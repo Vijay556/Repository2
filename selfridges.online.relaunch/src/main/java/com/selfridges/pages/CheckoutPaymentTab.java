@@ -44,7 +44,7 @@ WebDriver driver;
 	WebElement cv2;
 	@FindBy(id = Constants.payNowButton)
 	WebElement payNowButton;
-	@FindBy(id = Constants.addNewBillingAddressForNewCard)
+	@FindBy(css = Constants.addNewBillingAddressForNewCard)
 	WebElement addNewBillingAddressForNewCard;
 	WebElement CardExpiryMonth;
 	@FindBy(linkText=Constants.mr)
@@ -71,6 +71,10 @@ WebDriver driver;
 	WebElement postCodeAddBillingAddress;
 	@FindBy(id = Constants.findAddressButtonAddBillingAddress)
 	WebElement findAddressButtonAddBillingAddress;
+	@FindBy(id = Constants.housenameOrNumberAddBillingAddressLine1)
+	WebElement housenameOrNumberAddBillingAddress1;
+	@FindBy(id = Constants.housenameOrNumberAddBillingAddressLine2)
+	WebElement housenameOrNumberAddBillingAddressLine2;
 	@FindBy(id = Constants.saveAddressButtonAddBillingAddress)
 	WebElement saveAddressButtonAddBillingAddress;
 	@FindBy(linkText = Constants.addressAddedConfirmationSuccessContinueButton)
@@ -86,16 +90,16 @@ public CheckoutOrderConfirmationTab placeAnOrderWithOnlyNewDebitCreditCard(Strin
 		payWithNewDebitCreditCardRadio.click();
 		  selectCardTypePleaseChoose.click();
 		  selectCardType(cardType);
-		  cardNumberField.clear();
-		  cardNumberField.sendKeys(cardNum);
+		  //cardNumberField.clear();
+		  //cardNumberField.sendKeys(cardNum);
 		  nameOnCardField.clear();
 		  nameOnCardField.sendKeys(cardName);
 		  expiryMonthDropdown.click();
 		  driver.findElement(By.linkText(expMonth)).click();
 		  expiryYearDropdown.click();
 		  driver.findElement(By.linkText(expYear)).click();
-		  cv2.clear();
-		  cv2.sendKeys(cvv);
+		  //cv2.clear();
+		  //cv2.sendKeys(cvv);
 		  addNewBillingAddressForNewCard.click();
 		  billingAddressTitle.click();
 		  selectTitle(title);
@@ -109,8 +113,11 @@ public CheckoutOrderConfirmationTab placeAnOrderWithOnlyNewDebitCreditCard(Strin
 		  housenameOrNumberAddBillingAddress.sendKeys(line1);
 		  postCodeAddBillingAddress.clear();
 		  postCodeAddBillingAddress.sendKeys(postcode);
-		  findAddressButtonAddBillingAddress.click();
-		  Thread.sleep(2000);
+		  housenameOrNumberAddBillingAddress1.sendKeys("4 cornerfield");
+		  housenameOrNumberAddBillingAddressLine2.sendKeys("hatfield");
+		  //Thread.sleep(2000);
+		  //findAddressButtonAddBillingAddress.click();
+		  Thread.sleep(5000);
 		  saveAddressButtonAddBillingAddress.click();
 		  addressAddedConfirmationSuccessContinueButton.click();
 		  Thread.sleep(2000);

@@ -69,6 +69,7 @@ WebDriver driver;
 	   else if (store.equalsIgnoreCase("ExchangeSquare"))
 		   selectExchangeSquareStore();
 	   selectSecondCollectionAvailableDay();
+	   Thread.sleep(2000);
 	   continueToPaymentTab.click();
 	   return  PageFactory.initElements(driver, CheckoutPaymentTab.class);
 }

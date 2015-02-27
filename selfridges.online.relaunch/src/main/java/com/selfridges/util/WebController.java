@@ -223,12 +223,14 @@ public class WebController {
 	public void goToURL(String URL){
 		System.out.println("Navigating to : " + ENV.getProperty(URL));
 		driver.get(ENV.getProperty(URL));
+		driver.findElement(By.linkText("Click to Enter")).click();
+		driver.findElement(By.linkText("Grant Me Access to the Test Environment")).click();
 		System.out.println("On Home page now");
 	}
 	public void closeBrowser(){
 		//System.out.println(ENV.getProperty(URL));
 		System.out.println("Browser is closing now");
-	    driver.quit();
+	    //driver.quit();
 	    driver = null;
 	    System.out.println("Browser is now closed");
 	}

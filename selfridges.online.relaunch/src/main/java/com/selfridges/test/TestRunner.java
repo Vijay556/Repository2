@@ -11,7 +11,7 @@ import cucumber.api.junit.Cucumber;
 //@Cucumber.Options(format={"pretty", "html:target/cucumber"}, features = {"src/main/resources/com/selfridges/test/vijay1.feature"})
 
 @Cucumber.Options(		
-		             features = {"src/main/resources/com/selfridges/test/Delivery.feature"},
+		             features = {"src/main/resources/com/selfridges/test/guest.feature"},
                      format = {"json:target/cucumber.json", "html:target/cucumber"},
                      tags = {"@RunOnlyThis"}
 		          )

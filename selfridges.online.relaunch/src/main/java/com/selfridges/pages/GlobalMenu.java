@@ -32,6 +32,9 @@ public WebDriver driver;
 	WebElement signOut;
 	@FindBy(xpath=Constants.MensL1Link)
 	WebElement MensL1Link;
+	@FindBy(id=Constants.selfridgesLogo)
+	WebElement selfridgesLogo;
+	
 	
 	
 		
@@ -47,6 +50,7 @@ public WebDriver driver;
 	
 	public PLPPage searchProduct(String product){
 	
+		selfridgesLogo.click();
 		searchIcon.click();
 		searchInput.clear();
 		searchInput.sendKeys(product);

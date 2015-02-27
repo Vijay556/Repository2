@@ -60,6 +60,8 @@ WebDriver driver;
 
 
 public CheckoutDeliveryTab continueToDeliveryTabAsAGuestUserWith(String ttl, String fName, String lName, String email, String phone) throws InterruptedException{
+	
+	Thread.sleep(5000);
 	titleDropDown.click();
 	if("mr".equalsIgnoreCase(ttl))
 		mr.click();
@@ -81,8 +83,11 @@ public CheckoutDeliveryTab continueToDeliveryTabAsAGuestUserWith(String ttl, Str
 	//phoneNumberField.sendKeys(phone);
 	//driver.action.send_keys(elementVisible, :tab).send_keys(elementVisible, :return).perform;
 	//continueToDeliveryButton.w
+	
 	Thread.sleep(2000);
-	continueToDeliveryButton.click();
+	emailAddressField.sendKeys(Keys.ENTER);
+	//continueToDeliveryButton.click();
+	//continueToDeliveryButton.click();
 	//((JavascriptExecutor)driver).executeScript("arguments[0].checked = true;", continueToDeliveryButton);
 	return PageFactory.initElements(driver, CheckoutDeliveryTab.class);
  }

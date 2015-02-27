@@ -135,7 +135,8 @@ public class Constants {
 	
 	
 	//Checkout options page
-	public static final String continueToCheckoutAsAGuestOrANewUserButton = "CONTINUE TO THE CHECKOUT";
+	public static final String continueToCheckoutAsAGuestOrANewUserButton = "CHECKOUT NOW";
+	//public static final String continueToCheckoutAsAGuestOrANewUserButton = "CONTINUE TO THE CHECKOUT";
 	public static final String userCheckOut="//*[@id='signInSection']/div[2]/div[2]/form/fieldset/div[4]/button";
 	public static final String signUpNow="//*[@id='signInSection']/div[3]/div[2]/ul/li[1]/a/span";
 	public static final String email="//*[@id='logonId']";
@@ -173,7 +174,7 @@ public class Constants {
 	
 	//Your details tab
 	public static final String yourDetailsText = "h3";
-	public static final String titleDropDown = "TITLE";
+	public static final String titleDropDown = "Title";
 	public static final String mr = "Mr";
 	public static final String mrs = "Mrs";
 	public static final String ms = "Ms";
@@ -243,7 +244,8 @@ public class Constants {
 	public static final String expiryYearDropdown = "YY";
 	public static final String cv2 = "cv2";
 	public static final String payNowButton = "payNow";
-	public static final String addNewBillingAddressForNewCard = "addBillingAddressForNewCard";
+	public static final String addNewBillingAddressForNewCard = "button.overlayAdd.btnN";
+	//public static final String addNewBillingAddressForNewCard = "addBillingAddressForNewCard";
 	public static final String billingAddressTitle = "Title";
 	public static final String firstNameAddBillingAddress = "div.singleInput > #firstName";//"firstName";
 	public static final String lastNameAddBillingAddress = "div.singleInput > #lastName";//"lastName";
@@ -255,4 +257,7 @@ public class Constants {
 	public static final String addressAddedConfirmationSuccessContinueButton = "CONTINUE";
 	public static final String placeOrderButtonButton = "payNow";
 	public static final String payWithGiftCard = "#giftcardsection > div.radioGroup > label";
+	public static final String housenameOrNumberAddBillingAddressLine1 = "address1";
+	public static final String housenameOrNumberAddBillingAddressLine2 = "city";
+	public static final String selfridgesLogo = "logo";
 }
