@@ -6,7 +6,7 @@ Background: Given Im on Selfridges website
 Scenario Outline: Paying with different cards 'Visa credit' Paymentcard
 
 When I searched for "<ItemNname>" and added to the basket
-And being delivered to "<Title>","<Fname>","<Lname>","<Email>","<Phone>"
+And being delivered to "<Title>","<Fname>","<Lname>","<Email>"
 And I choose to deliver to "<Country>", "<Addressline1>", "<Addressline2>", "<Addressline3>", "<Addressline4>", "<Postcode>", "<Phone>"
 And I paid with payment card of "<CardType>","<CardNumber>","<NameOnCard>","<ExpMonth>","<ExpYear>","<CVV>","<Title>","<Fname>","<Lname>","<PhoneNumber>","<BillingCountry>","<BillingPostCode>","<BillingAddressLine1>","<BillingAddressLine2>","<BillingAddressLine3>","<BillingAddressLine4>"
 Then I should get an order confirmation

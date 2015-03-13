@@ -57,11 +57,12 @@ public class Constants {
 	public static final String firstName="//*[@id='home_WC__NameEntryForm_FormInput_firstName_1']";
 	public static final String surName="//*[@id='home_WC__NameEntryForm_FormInput_lastName_1']";
 	public static final String telePhone="//*[@id='home_phone1']";
-	public static final String postCode="//*[@id='postCode']";
-	public static final String address1="//*[@id='address1']";
-	public static final String address2="//*[@id='address2']";
-	public static final String city="//*[@id='city']";
-	public static final String county="//*[@id='state']";
+	//public static final String postCode="postcode";
+	public static final String postCode="zipCode";
+	public static final String address1="address1";
+	public static final String address2="address2";
+	public static final String city="city";
+	public static final String county="state";
 	public static final String addressNickName="//*[@id='nickName']";
 	public static final String sameAsBillingAddress="//*[@id='addressField1']";
 	public static final String continueToDeliveryOptions="//*[@id='groupHD']/div/div[4]/div/button";
@@ -100,8 +101,7 @@ public class Constants {
 		
 	//Gift Options page
 	
-	public static final String payNowBtn1="//*[@id='deliveryOptionsSection']/div[3]/div[1]/div/ul/li[1]/input";
-	public static final String payNowBtn2="//*[@id='deliveryOptionsSection']/div[3]/div[4]/ul/li[2]/input";
+	public static final String payNowBtn="payNow";
 	public static final String dateDropDown="//*[@id='storeCollectionDate_1']";
 	public static final String londonStoreRadio="//*[@id='radio_activestores_1_1']";
 	public static final String birminghamStoreRadio="//*[@id='radio_activestores_3_1']";
@@ -221,11 +221,20 @@ public class Constants {
 	public static final String isThisAGiftCheckBoxPart1 = "item-is-gift-1";
 	public static final String isThisAGiftCheckBoxPart2 = "div.giftWrapDetails > label";
 	public static final String giftPackagingPart1 = "Gift-998-1-1-1";
-	//public static final String giftPackagingPart2 = "div.giftWrapAndMessage > label";
+	public static final String giftPackagingPart2 = "div.giftWrapAndMessage > label";
 	public static final String giftMessageTextField = "Gift-999-1-1";
-	public static final String continueToPaymentTab = "giftingContinueToPaymentButton";
+	//public static final String continueToPaymentTab = "giftingContinueToPaymentButton";
+	public static final String continueToPaymentTab = "continueToPayment";
 	public static final String phoneNumber = "_phone1";
-	
+	public static final String houseNameOrNumber = "premises";
+	public static final String deliveryPostcode = "zipCode";
+	public static final String findAddress = "findaddress";
+	public static final String chooseDeliveryOption = "addFirstAddressContinueToDelivery";
+	public static final String standardDeliveryPart1 = "deliverytype_1_1";
+	public static final String standardDeliveryPart2 = "fieldset.deliveryOptionsGroup > label";
+	public static final String nominatedDayDeliveryPart1 = "deliverytype_1_nominated";
+	public static final String nominatedDayDeliveryPart2 = "//div[@id='deliveryOptions']/fieldset/label[2]";
+		
 	
 	//Payment tab
 	public static final String payWithNewDebitCreditCardRadio = "newcard";
@@ -260,4 +269,12 @@ public class Constants {
 	public static final String housenameOrNumberAddBillingAddressLine1 = "address1";
 	public static final String housenameOrNumberAddBillingAddressLine2 = "city";
 	public static final String selfridgesLogo = "logo";
+	public static final String payWithPaypalRadioPart1 = "payByPaypal";
+	public static final String payWithPaypalRadioPart2 = "#sizzle-1426082473583 > div.radioGroup > label";
+	public static final String paypalEmail = "login_email";
+	public static final String paypalPassword = "login_password";
+	public static final String paypalLoginButton = "submitLogin";
+	public static final String paypalPayNowButton = "continue";
+	public static final String uk = "United Kingdom";
+	
 }

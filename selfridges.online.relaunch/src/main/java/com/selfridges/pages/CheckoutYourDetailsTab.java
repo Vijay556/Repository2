@@ -59,7 +59,7 @@ WebDriver driver;
 	WebElement AutoRecognisedEmailText;	
 
 
-public CheckoutDeliveryTab continueToDeliveryTabAsAGuestUserWith(String ttl, String fName, String lName, String email, String phone) throws InterruptedException{
+public CheckoutDeliveryTab continueToDeliveryTabAsAGuestUserWith(String ttl, String fName, String lName, String email) throws InterruptedException{
 	
 	Thread.sleep(5000);
 	titleDropDown.click();

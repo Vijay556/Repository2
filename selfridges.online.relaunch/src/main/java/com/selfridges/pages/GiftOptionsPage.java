@@ -17,10 +17,10 @@ public class GiftOptionsPage {
 	WebDriver driver;
 	Logger log=WebController.logger;
 	
-	@FindBy(xpath=Constants.payNowBtn1)
-	WebElement payNowBtn1;
-	@FindBy(xpath=Constants.payNowBtn2)
-	WebElement payNow2;
+	//@FindBy(xpath=Constants.payNowBtn1)
+	//WebElement payNowBtn1;
+	//@FindBy(xpath=Constants.payNowBtn2)
+	//WebElement payNow2;
 	@FindBy(xpath=Constants.dateDropDown)
 	WebElement dateDropDown;
 	@FindBy(xpath=Constants.londonStoreRadio)
@@ -66,7 +66,7 @@ public class GiftOptionsPage {
 	//Hit the pay now button on Gift options page
 	public PaymentPage payNowByTopBtn(){
 		log.info("Clicking on Pay now button in Gift options page");
-		payNowBtn1.click();
+		//payNowBtn1.click();
 		return PageFactory.initElements(driver, PaymentPage.class);
 		
 	}

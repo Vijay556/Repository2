@@ -15,10 +15,10 @@ public class DeliveryOptionsPage2 {
 	
 	@FindBy(xpath=Constants.dateDropDown)
 	WebElement datedropdown;
-	@FindBy(xpath=Constants.payNowBtn1)
-	WebElement payNowBtn1;
-	@FindBy(xpath=Constants.payNowBtn2)
-	WebElement payNow2;
+	//@FindBy(xpath=Constants.payNowBtn1)
+	//WebElement payNowBtn1;
+	//@FindBy(xpath=Constants.payNowBtn2)
+	//WebElement payNow2;
 	@FindBy(xpath=Constants.dateDropDown)
 	WebElement dateDropDown;
 	@FindBy(xpath=Constants.londonStoreRadio)
@@ -42,7 +42,7 @@ public class DeliveryOptionsPage2 {
 	}
 
 	public PaymentPage clickOnPayNowButton1() throws InterruptedException{
-		payNowBtn1.click();
+		//payNowBtn1.click();
 		return PageFactory.initElements(driver, PaymentPage.class);
 	}
 }

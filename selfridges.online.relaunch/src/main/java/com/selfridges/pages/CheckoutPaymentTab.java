@@ -83,6 +83,18 @@ WebDriver driver;
 	WebElement placeOrderButtonButton;
 	@FindBy(css = Constants.payWithGiftCard)
 	WebElement payWithGiftCard;
+	@FindBy(id = Constants.payWithPaypalRadioPart1)
+	WebElement payWithPaypalRadioPart1;
+	@FindBy(css = Constants.payWithPaypalRadioPart2)
+	WebElement payWithPaypalRadioPart2;
+	@FindBy(id = Constants.paypalEmail)
+	WebElement paypalEmail;
+	@FindBy(id = Constants.paypalPassword)
+	WebElement paypalPassword;
+	@FindBy(id = Constants.paypalLoginButton)
+	WebElement paypalLoginButton;
+	@FindBy(id = Constants.paypalPayNowButton)
+	WebElement paypalPayNowButton;
 	
 	
 public CheckoutOrderConfirmationTab placeAnOrderWithOnlyNewDebitCreditCard(String cardType, String cardNum, String cardName, String expMonth, String expYear, String cvv, String title,String fname, String lname, String phone, String countryName, String postcode, String line1, String line2, String line3, String line4) throws InterruptedException{
@@ -136,6 +148,20 @@ public CheckoutOrderConfirmationTab placeAnOrderWithOnlyNewDebitCreditCard(Strin
 		  return  PageFactory.initElements(driver, CheckoutOrderConfirmationTab.class);
 	}
 
+public CheckoutOrderConfirmationTab placeAnOrderUsingPaypalWith(String paypalemail, String paypalpassword) {
+	
+	payWithPaypalRadioPart1.click();
+	//payWithPaypalRadioPart2.click();
+	placeOrderButtonButton.click();
+	paypalEmail.clear();
+	paypalEmail.sendKeys(paypalemail);
+	paypalPassword.clear();
+	paypalPassword.sendKeys(paypalpassword);
+	paypalLoginButton.click();
+	paypalPayNowButton.click();
+	return  PageFactory.initElements(driver, CheckoutOrderConfirmationTab.class);
+	}
+
 /*public CheckoutOrderConfirmationTab placeAnOrderWithGiftCardOnly(String cardNumber, String Pin){
 	payWithNewDebitCreditCardRadio.click();
 	  selectCardTypePleaseChoose.click();
@@ -171,5 +197,5 @@ private void selectCardType(String cardType) {
 			selectMaestroCard.click();
 		else selectElectron.click();
 }
-	
+
 }

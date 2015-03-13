@@ -70,11 +70,11 @@ public class ClickAndCollect {
 		gm.searchProduct(arg1).goToPDPOfFirstProduct().addToBag();	    
 	}
 
-	@When("^being delivered to \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\"$")
-	public void being_delivered_to_(String arg1, String arg2, String arg3, String arg4, String arg5) throws Throwable {
+	@When("^being delivered to \"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\",\"([^\"]*)\"$")
+	public void being_delivered_to_(String arg1, String arg2, String arg3, String arg4) throws Throwable {
 		//DeliveryOptionsPage2
 		
-		gm.clickBasketIcon().continueToCheckOut().continueToCheckoutAsAGuestOrANewUser().continueToDeliveryTabAsAGuestUserWith(arg1, arg2, arg3, arg4, arg5);
+		gm.clickBasketIcon().continueToCheckOut().continueToCheckoutAsAGuestOrANewUser().continueToDeliveryTabAsAGuestUserWith(arg1, arg2, arg3, arg4);
 	}
 	
 	@When("^I choose collection point as \"([^\"]*)\"$")
